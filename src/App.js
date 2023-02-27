@@ -5,7 +5,7 @@ import foto from "./assets/foto.jpg";
 function App() {
   const [city, setCity] = useState("");
   const [data, setData] = useState({});
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=807d004e98ade9ef529a71c7e287eea0
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=807d004e98ade9ef529a71c7e287eea0
 `;
   const location = (e) => {
     if (e.key === "Enter") {
@@ -31,22 +31,44 @@ function App() {
               value={city}
               type="text"
               onChange={(e) => setCity(e.target.value)}
-            ></input>
-            <p className="mt-10">Dallas</p>
-            <h1 className="text-8xl p-4">29oC</h1>
-            <p className="absolute rotate-90 mt-10 right-5">Sunny</p>
+            />
+            <p className="mt-10 text-4xl">{data.name}</p>
+            {data.main ? (
+              <h1 className="text-8xl p-4">{data.main.temp.toFixed()} ℃</h1>
+            ) : (
+              ""
+            )}
+            {data.main ? (
+              <p className="absolute rotate-90 mt-10 right-5">
+                {data.weather[0].main}
+              </p>
+            ) : (
+              ""
+            )}
           </div>
           <div className="flex justify-evenly max-w-[700px] mx-auto rounded-lg p-3 bg-gray-900/70">
             <div>
-              <p className="font-bold">66oC</p>
+              {data.main ? (
+                <p className="font-bold">{data.main.feels_like.toFixed()} ℃</p>
+              ) : (
+                ""
+              )}
               <p className="text-2xl">Feels like</p>
             </div>
             <div>
-              <p className="font-bold">20</p>
+              {data.main ? (
+                <p className="font-bold">{data.main.humidity} %</p>
+              ) : (
+                ""
+              )}
               <p className="text-2xl">Humidity</p>
             </div>
             <div>
-              <p className="font-bold">12kmh</p>
+              {data.wind ? (
+                <p className="font-bold">{data.wind.speed.toFixed()} KMH</p>
+              ) : (
+                ""
+              )}
               <p className="text-2xl">Wind speed</p>
             </div>
           </div>
