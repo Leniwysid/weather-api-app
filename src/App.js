@@ -46,32 +46,38 @@ function App() {
               ""
             )}
           </div>
-          <div className="flex justify-evenly max-w-[700px] mx-auto rounded-lg p-3 bg-gray-900/70">
-            <div>
-              {data.main ? (
-                <p className="font-bold">{data.main.feels_like.toFixed()} ℃</p>
-              ) : (
-                ""
-              )}
-              <p className="text-2xl">Feels like</p>
+          {data.main ? (
+            <div className="flex justify-evenly max-w-[700px] mx-auto rounded-lg p-3 bg-gray-900/70">
+              <div>
+                {data.main ? (
+                  <p className="font-bold">
+                    {data.main.feels_like.toFixed()} ℃
+                  </p>
+                ) : (
+                  ""
+                )}
+                <p className="text-2xl">Feels like</p>
+              </div>
+              <div>
+                {data.main ? (
+                  <p className="font-bold">{data.main.humidity} %</p>
+                ) : (
+                  ""
+                )}
+                <p className="text-2xl">Humidity</p>
+              </div>
+              <div>
+                {data.wind ? (
+                  <p className="font-bold">{data.wind.speed.toFixed()} KMH</p>
+                ) : (
+                  ""
+                )}
+                <p className="text-2xl">Wind speed</p>
+              </div>
             </div>
-            <div>
-              {data.main ? (
-                <p className="font-bold">{data.main.humidity} %</p>
-              ) : (
-                ""
-              )}
-              <p className="text-2xl">Humidity</p>
-            </div>
-            <div>
-              {data.wind ? (
-                <p className="font-bold">{data.wind.speed.toFixed()} KMH</p>
-              ) : (
-                ""
-              )}
-              <p className="text-2xl">Wind speed</p>
-            </div>
-          </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
