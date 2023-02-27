@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="w-full h-screen relative">
-      <img className="w-full h-screen object-cover" src={foto} />
+      <img className="w-full h-screen object-cover" src={foto} alt="/" />
       <div className="absolute w-full h-full top-0 left-0 bg-gray-900/20"></div>
       <div className="absolute w-full text-white top-10 flex flex-col mx-auto text-3xl">
         <div className=" justify-between text-center ">
