@@ -17,7 +17,6 @@ function App() {
   };
 
   const handleKeypress = (e) => {
-    //it triggers by pressing the enter key
     if (e.keyCode === 13) {
       location();
     }
