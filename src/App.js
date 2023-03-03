@@ -22,14 +22,14 @@ function App() {
     }
   };
   return (
-    <div className="w-full h-screen relative">
+    <div className="w-full h-full relative">
       <img className="w-full h-screen object-cover" src={foto} alt="/" />
       <div className="absolute w-full h-full top-0 left-0 bg-gray-900/20"></div>
       <div className="absolute w-full text-white top-10 flex flex-col mx-auto text-3xl">
         <div className=" justify-between text-center ">
-          <div className="max-w-[1240px] h-[700px] mx-auto ">
+          <div className="max-w-[1240px] sm:h-[700px] h-[500px] mx-auto ">
             <input
-              className="bg-gray-900/70 rounded-lg text-center p-2 mb-4"
+              className="bg-gray-900/70 rounded-lg text-center w-full p-2 mb-4"
               placeholder="Enter location"
               value={city}
               type="text"
@@ -54,7 +54,7 @@ function App() {
             )}
           </div>
           {data.main ? (
-            <div className="flex justify-evenly max-w-[700px] mx-auto rounded-lg p-3 bg-gray-900/70">
+            <div className="flex justify-evenly max-w-[700px] mx-auto rounded-lg p-3  bg-gray-900/70">
               <div>
                 {data.main ? (
                   <p className="font-bold">
