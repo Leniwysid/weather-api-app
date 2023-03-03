@@ -46,7 +46,7 @@ function App() {
               ""
             )}
             {data.main ? (
-              <p className="absolute rotate-90 mt-10 right-5">
+              <p className="absolute rotate-90 mt-10 sm:right-5 right-0">
                 {data.weather[0].main}
               </p>
             ) : (
