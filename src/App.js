@@ -57,29 +57,31 @@ function App() {
             <div className="flex justify-evenly max-w-[700px] mx-auto rounded-lg p-3  bg-gray-900/70">
               <div>
                 {data.main ? (
-                  <p className="font-bold">
+                  <p className="sm:font-bold">
                     {data.main.feels_like.toFixed()} ℃
                   </p>
                 ) : (
                   ""
                 )}
-                <p className="text-2xl">Feels like</p>
+                <p className="sm:text-2xl text-xl">Feels like</p>
               </div>
               <div>
                 {data.main ? (
-                  <p className="font-bold">{data.main.humidity} %</p>
+                  <p className="sm:font-bold">{data.main.humidity} %</p>
                 ) : (
                   ""
                 )}
-                <p className="text-2xl">Humidity</p>
+                <p className="sm:text-2xl text-xl">Humidity</p>
               </div>
               <div>
                 {data.wind ? (
-                  <p className="font-bold">{data.wind.speed.toFixed()} KMH</p>
+                  <p className="sm:font-bold">
+                    {data.wind.speed.toFixed()} KMH
+                  </p>
                 ) : (
                   ""
                 )}
-                <p className="text-2xl">Wind speed</p>
+                <p className="sm:text-2xl text-xl">Wind speed</p>
               </div>
             </div>
           ) : (
