@@ -37,7 +37,7 @@ function App() {
               onKeyDown={handleKeypress}
             />
             <button onClick={location} className="text-gray-400">
-              <HiArrowRightOnRectangle />
+              <HiArrowRightOnRectangle size={22} />
             </button>
             <p className="mt-10 text-4xl">{data.name}</p>
             {data.main ? (
